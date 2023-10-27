@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>TTC_Record_Assignment_Email_Alert</fullName>
+        <description>TTC Record Assignment Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>esinerdag2@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_template_for_Primary</template>
+    </alerts>
+    <alerts>
+        <fullName>TTC_Status_Update_Email_Alert</fullName>
+        <description>TTC Status Update Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>esinerdag1@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_template_for_updates_on_TTC_status_communication</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_to_Requested</fullName>
+        <field>TTC_status__c</field>
+        <literalValue>Requested</literalValue>
+        <name>Update to Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_TTC_Collaborated</fullName>
+        <field>TTC_status__c</field>
+        <literalValue>TTC Collaborated</literalValue>
+        <name>Update to TTC Collaborated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_to_rejected</fullName>
+        <field>TTC_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>update to rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Due_date_for_Approval</fullName>
+        <assignedTo>esinerdag2@gmail.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Due date for Approval</subject>
+    </tasks>
+    <tasks>
+        <fullName>Due_date_for_Approval1</fullName>
+        <assignedTo>esinerdag2@gmail.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>TTC_Record__c.Respond_by_Date__c</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>Due date for Approval1</subject>
+    </tasks>
+</Workflow>
